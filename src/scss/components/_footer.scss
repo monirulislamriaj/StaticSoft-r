@@ -1,0 +1,71 @@
+/********** 
+15. Footer Section Styles
+**********/
+.footer {
+  position: relative;
+  padding-bottom: 90px;
+  background: $color-white;
+  @include media-breakpoint-down-lg {
+    padding-bottom: 60px;
+  }
+  &-wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    @include media-breakpoint-down-md {
+      //text-align: center;
+      padding: 0 10px;
+    }
+    .footer-logo {
+      @include media-breakpoint-down-lg {
+        margin-bottom: $base-margin * 3;
+      }
+      a {
+        margin-bottom: $base-margin * 3;
+        @include media-breakpoint-down-lg {
+          margin-bottom: $base-margin ;
+        }
+        @include media-breakpoint-down-md {
+          margin-bottom: $base-margin * 0.5;
+        }
+      }
+      @include media-breakpoint-down-lg {
+        margin-bottom: $base-margin * 3.5;
+        text-align: center;
+      }
+    }
+  }
+  &-widget {
+    margin-left: 80px;
+    @include media-breakpoint-down-xxl {
+      margin-left: 0px;
+    }
+    @include media-breakpoint-down-md {
+      margin-bottom: $base-margin * 2.5;
+    }
+    h6 {
+      margin-bottom: $base-margin * 2.5;
+      color: $color-text;
+      font-family: $font-primary;
+      font-size: $base-margin * 0.8;
+      font-weight: normal;
+      @include media-breakpoint-down-md {
+        margin-bottom: $base-margin * 1.5;
+      }
+    }
+    ul {
+      margin-bottom: $base-margin * 0;
+      li {
+        display: block;
+        a {
+          padding: $base-padding * 0.8 $base-padding * 0.2 $base-padding * 0.8;
+          color: $color-text;
+          font-weight: $medium-font-weight;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}

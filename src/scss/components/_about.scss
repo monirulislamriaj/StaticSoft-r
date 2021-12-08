@@ -1,0 +1,95 @@
+/********** 
+  8. About Page and Section Styles
+**********/
+.about,
+.feature-two {
+  position: relative;
+  padding: $base-padding * 4.5 0 $base-padding * 5.5;
+  @include media-breakpoint-down-sm {
+    padding: $base-padding * 3 0 $base-padding * 5.5;
+  }
+  .shape-carve-top {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    @include media-breakpoint-down-lg {
+      top: -40px;
+    }
+    @include media-breakpoint-down-md {
+      top: -35px;
+    }
+    svg {
+      width: 100%;
+    }
+  }
+  .shape-carve-bottom {
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    svg {
+      width: 100%;
+    }
+  }
+  .card {
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    padding: $base-padding * 5 $base-padding * 3.75 $base-padding * 5;
+    border-radius: 10px;
+    box-shadow: none;
+    z-index: 100;
+    overflow: hidden;
+    @include media-breakpoint-down-xl {
+      padding: $base-padding * 5 $base-padding * 2 $base-padding * 5;
+    }
+    
+    &:hover {
+      box-shadow: 0px 40px 60px rgba(189, 189, 189, 0.25);
+      border-radius: 10px;
+      background: #fdfdfd;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+    &-icon {
+      margin-bottom: $base-margin * 2.7;
+      img {
+        min-height: 100px;
+      }
+    }
+    &-body {
+      padding: 0;
+      h4.card-title {
+        margin-bottom: $base-margin * 1.4;
+        font-weight: $bold-font-weight;
+        font-size: $base-font-size * 1.625;
+      }
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      transform: scaleX(0);
+      transition: $base-transition;
+      transform-origin: right;
+      background: $color-primary;
+      display: none;
+    }
+    &.active {
+      @include media-breakpoint-down-lg {
+        box-shadow: 0px 0px 60px rgba(189, 189, 189, 0.25);
+      }
+    }
+    &.about-item{
+      margin-bottom: $base-margin * 2;
+    }
+  }
+
+}

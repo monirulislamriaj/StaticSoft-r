@@ -1,0 +1,296 @@
+
+/********** 
+  9. Feature Page nd Section Styles
+**********/
+.feature {
+  padding-bottom: $base-padding * 12;
+  @include media-breakpoint-down-xxl {
+    padding-bottom: $base-margin * 10;
+  }
+  @include media-breakpoint-down-lg {
+    padding-bottom: $base-padding * 6;
+  }
+  &-title {
+    h2 {
+      font-size: $base-font-size * 3.1;
+      @include media-breakpoint-down-xxl {
+        font-size: $base-font-size * 2.5;
+      }
+      @include media-breakpoint-down-md {
+        text-align: center;
+      }
+      @include media-breakpoint-down-sm {
+        font-size: $base-font-size * 2.5;
+        text-align: center;
+      }
+    }
+  }
+
+  &-item-banner {
+    position: relative;
+    @include media-breakpoint-down-lg {
+      margin: $base-margin * 3 0;
+    }
+    .card-image {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      
+      img {
+        max-width: 100%;
+        box-shadow: 0px 40px 40px rgba(189, 189, 189, 0.25);
+        border-radius: 10px;
+      }
+      @include media-breakpoint-down-xxl {
+        max-width: 70%;
+        margin:0 auto;
+      }
+    }
+    .card-image-shape {
+      position: absolute;
+      top: -55px;
+      left: 0;
+      z-index: -1;
+      @include media-breakpoint-down-xl {
+        top: -150px;
+      }
+      @include media-breakpoint-down-lg {
+        top: -22%;
+        left: 12%;
+      }
+      @include media-breakpoint-down-md {
+        top: -20%;
+        left: 10px;
+      }
+      @include media-breakpoint-down-sm {
+        top: -15%;
+        left: 10px;
+      }
+      svg {
+        @include media-breakpoint-down-xxl {
+          width: 590px;
+        }
+        @include media-breakpoint-down-xl {
+          width: 470px;
+        }
+        @include media-breakpoint-down-lg {
+          width: 600px;
+        }
+        @include media-breakpoint-down-md {
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+    }
+    .card-image-shape-two {
+      position: absolute;
+      top: -100px;
+      z-index: -1;
+      left: 0;
+      @include media-breakpoint-down-xxl {
+        left: -20px;
+      }
+      @include media-breakpoint-down-xl {
+        left: -80px;
+      }
+      @include media-breakpoint-down-lg {
+        left: 25px;
+      }
+      @include media-breakpoint-down-md {
+        top: -30%;
+        left: -20px;
+      }
+      @include media-breakpoint-down-sm {
+        top: -12%;
+        left: 10px;
+      }
+      svg {
+        @include media-breakpoint-down-md {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  &-item-content {
+    //
+    // Base styles
+    //
+
+    .accordion-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      font-size: $base-font-size * 1.25;
+      color: $color-text;
+      font-family: $font-primary;
+      background-color: $color-white;
+      font-weight: $semibold-font-weight;
+
+      &:not(.collapsed) {
+        padding: $base-padding * 1.9 $base-padding * 1.9 0 $base-padding * 1.9;
+        color: $color-primary;
+        background: $color-secondary;
+      }
+
+      // Accordion icon
+      &::after,
+      &::before {
+        display: none;
+      }
+
+      &:hover {
+        z-index: 2;
+      }
+
+      &:focus {
+        z-index: 3;
+        border-color: rgba(250, 250, 250, 0.52);
+        outline: 0;
+        box-shadow: none;
+      }
+    }
+
+    .accordion-header {
+      margin-bottom: 0;
+    }
+
+    .accordion-item {
+      background: $color-secondary;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      border-bottom: 0;
+      padding: $base-padding * 0;
+    }
+
+    .accordion-body {
+      padding: $base-padding * 1 $base-padding * 1.9 $base-padding * 1.9 $base-padding * 1.9;
+    }
+  }
+
+  /********** 
+  start-feature-hero section
+  **********/
+
+  &-hero {
+    position: relative;
+    &-dashboard {
+      text-align: center;
+      position: relative;
+      .dashboard-shape-one,
+      .dashboard-shape-two {
+        position: absolute;
+        top: 60%;
+        left: 0;
+        box-shadow: 0px 40px 60px rgba(189, 189, 189, 0.35);
+      }
+      .dashboard-shape-two {
+        left: 60%;
+        top: 10%;
+        border-radius: 10.1404px;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+
+  }
+  /********** 
+  start-feature-two section
+  **********/
+  &-two {
+    background: $color-gray;
+    position: relative;
+    padding-bottom: 0;
+    margin: -$base-margin * 3 0 $base-margin * 4;
+    .shape-carve-top {
+      position: absolute;
+      top: -45px;
+      left: 0;
+      width: 100%;
+      @include media-breakpoint-down-lg {
+        top: -40px;
+      }
+      @include media-breakpoint-down-md {
+        top: -35px;
+      }
+      svg {
+        width: 100%;
+        path {
+          fill: $color-gray;
+        }
+      }
+    }
+    .section-header {
+      padding-bottom: $base-padding * 5;
+      .shape {
+        top: 73%;
+      }
+    }
+    // feature-two item card
+    .card {
+      background: $color-gray;
+    }
+    .feature-two-items {
+      position: relative;
+      border-right: 1px solid #ebebeb;
+      border-bottom: 1px solid #ebebeb;
+      padding-top: 3.6rem;
+      @include media-breakpoint-down-md{
+        border-right: 0 solid #ebebeb;
+      }
+      @include media-breakpoint-down-sm{
+        padding-top: 2rem;
+        padding-bottom:1rem !important;
+      }
+      .feature-two-item {
+        display: flex;
+        padding: 0rem 8rem 1.4rem 1rem;
+        @include media-breakpoint-down-xl{
+          padding: 0rem 3rem 1.4rem 1rem;
+        }
+        @include media-breakpoint-down-lg{
+          padding: 0rem  $base-padding !important;
+        }
+        @include media-breakpoint-down-sm{
+          display: block;
+          text-align: center;
+          padding-bottom: $base-padding !important;
+        }
+        .item-icon {
+          padding-right: $base-padding * 1.6;
+          @include media-breakpoint-down-sm{
+            padding-right: 0;
+            margin-bottom: $base-margin;
+          }
+        }
+        .item-content {
+          h4 {
+            margin-bottom: $base-margin * 1;
+            font-size: $base-font-size * 1.9;
+          }
+        }
+      }
+    }
+  }
+  /* Hiding Accordion Button */
+  .accordion-button {
+    &::after {
+      display:none;
+    }
+  }
+}
+.border-end {
+  border-right: 1px solid transparent !important;
+}
+@keyframes left-right-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+  
+}

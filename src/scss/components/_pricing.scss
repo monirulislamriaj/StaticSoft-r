@@ -1,0 +1,319 @@
+/********** 
+  13. Pricing Page and Section Styles
+**********/
+.pricing,
+.pricing-two {
+  background: $color-secondary;
+  // padding: $spacer * 4.7 0 $spacer * 11;
+  position: relative;
+  //overflow: hidden;
+  .shape-carve-top {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    @include media-breakpoint-down-xxl {
+      top: -40px;
+    }
+    @include media-breakpoint-down-xl {
+      top: -30px;
+    }
+    @include media-breakpoint-down-lg {
+      top: -20px;
+    }
+    @include media-breakpoint-down-sm {
+      top: -12px;
+    }
+    svg {
+      width: 100%;
+    }
+  }
+  .shape-carve-bottom {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    width: 100%;
+    @include media-breakpoint-down-xxl {
+      bottom: -40px;
+    }
+    @include media-breakpoint-down-xl {
+      bottom: -30px;
+    }
+    @include media-breakpoint-down-lg {
+      bottom: -20px;
+    }
+    @include media-breakpoint-down-sm {
+      bottom: -12px;
+    }
+    svg {
+      width: 100%;
+    }
+  }
+  // start-pticing-item-shape
+  &-shape-one,
+  &-shape-two {
+    position: absolute;
+    top: 21%;
+    left: 25%;
+    // animation-name: left-right-animation;
+    // animation-duration: 2.5s;
+    // animation-iteration-count: infinite;
+    // animation-direction: alternate;
+    @include media-breakpoint-down-xxl {
+      top: 25%;
+      left: 17%;
+    }
+    @include media-breakpoint-down-xl {
+      left: 7%;
+    }
+    @include media-breakpoint-down-lg {
+      top: 12%;
+    }
+    @include media-breakpoint-down-sm {
+      top: 10%;
+      display: none;
+    }
+  }
+  &-shape-two {
+    top: 77%;
+    left: 67%;
+    @include media-breakpoint-down-xxl {
+      top: 82%;
+      left: 73%;
+    }
+    @include media-breakpoint-down-xl {
+      top: 85%;
+      left: 80%;
+    }
+    @include media-breakpoint-down-lg {
+      left: 77%;
+      top: 90%;
+    }
+    @include media-breakpoint-down-lg {
+      left: 77%;
+      top: 90%;
+    }
+    @include media-breakpoint-down-md {
+      left: 70%;
+      top: 91%;
+    }
+    @include media-breakpoint-down-sm {
+      left: 75%;
+      display: none;
+    }
+  }
+  // start-section-header
+  .section-header {
+    padding-bottom: $base-padding * 5.3;
+    h2{
+      @include media-breakpoint-down-md {
+        font-size: $base-font-size * 2.5;
+        line-height: 1.4;
+      }
+    }
+    .shape {
+      top: 75%;
+    }
+  }
+  .card {
+    transition: all 0.4s ease-in-out;
+    padding: $base-padding * 2.9 $base-padding * 2.5 $base-padding * 3.7;
+    background: $color-gray;
+    border-radius: 10px;
+    box-shadow: none;
+    z-index: 100;
+    text-align: left;
+    margin-bottom: 24px;
+    transform: translateY(5px);
+    transform: scale(1);
+    overflow: hidden;
+    @include media-breakpoint-down-lg {
+      margin: $base-margin * 0 $base-margin * 3 $base-margin * 2 $base-margin * 3;
+    }
+    @include media-breakpoint-down-sm {
+      margin: $base-margin * 0 $base-margin * 0 $base-margin * 2 $base-margin * 0;
+      padding: $base-margin * 2.9 $base-margin * 1.5 $base-margin * 3.7;
+    }
+    .price {
+      font-size: 1.25rem;
+      margin-bottom: $base-margin * 1.6;
+      transition: all 0.4s ease-in-out;
+      color: $color-black;
+      span {
+        font-size: $base-font-size * 2.8;
+        font-family: $font-secondary;
+        font-weight: 900;
+        transition: all 0.4s ease-in-out;
+        @include media-breakpoint-down-md{
+          font-size: $base-font-size * 2.25;
+        }
+      }
+    }
+    .card-title {
+      font-size: $base-font-size * 1.9;
+      font-family: $font-primary;
+      font-weight: $medium-font-weight;
+      color: $color-text;
+      margin-bottom: $base-margin;
+      @include media-breakpoint-down-md{
+        font-size: $base-font-size * 1.5;
+      }
+    }
+    .card-text {
+      font-size: $base-font-size * 1.25;
+      line-height: 28px;
+      margin-bottom: $base-margin * 3.3;
+      @include media-breakpoint-down-md{
+        font-size: $base-font-size ;
+      }
+    }
+
+    &-body {
+      padding: 0;
+      ul {
+        margin-bottom: $base-margin * 3.8;
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 18px;
+          line-height: 22px;
+          margin-bottom: $base-margin * 1.7;
+          i {
+            margin-right: $base-margin * 0.8;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        .deactive {
+          color: #ababab;
+        }
+      }
+      .link {
+        a {
+          transition: all 0.4s ease-in-out;
+          font-weight: $medium-font-weight;
+        }
+      }
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      transform: scaleX(0);
+      transition: transform 0.5s ease-in-out;
+      transform-origin: right;
+      background: $color-primary;
+    }
+    
+    .link {
+      a {
+        color: $color-primary;
+        background: $color-white;
+        &:hover{
+          background: $color-primary;
+          color: $color-white;
+        }
+        &:focus, &:hover:focus{
+          color: $color-primary !important;
+          background: $color-white;
+        }
+      }
+    }
+    &.featured{
+      box-shadow: 0px 51.084px 85.914px rgba(189, 189, 189, 0.25);
+      .price {
+        color: $color-primary;
+      }
+      .link {
+        a {
+          background: $color-primary;
+          color: $color-white;
+          &:hover{
+            color: $color-primary;
+            background: $color-white;
+          }
+          &:focus, &:hover:focus{
+            color: $color-primary;
+            background: $color-white;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Pricing in Inner Page section */
+  &-inner{
+    background: transparent;
+    overflow: hidden;
+    .section-header {
+      padding: 0;
+      margin-bottom: $base-margin * 2.5;
+    }
+    .shapes {
+      @include media-breakpoint-down-md{
+        display: none;
+      }
+      &-item-1 {
+        position: absolute;
+        left: 20%;
+        top: -20px;
+      }
+      &-item-2 {
+        position: absolute;
+        right: 24%;
+        top: -30px;
+      }
+      &-item-3 {
+        position: absolute;
+        right: 13%;
+        bottom: 50%;
+      }
+      &-item-4 {
+        position: absolute;
+        left: 30%;
+        bottom: 5px;
+      }
+      &-item-5 {
+        position: absolute;
+        left: 16%;
+        bottom: -160px;
+      }
+      &-item-6 {
+        position: absolute;
+        right: 19%;
+        bottom: 0;
+      }
+    }
+    .pricing-shape-one {
+      top: 32%;
+      left: 26%;
+      @include media-breakpoint-only-lg{
+        left: 5%;
+      }
+    }
+    .pricing-shape-two {
+      top: 86%;
+      left: 68%;
+      @include media-breakpoint-only-lg{
+        left: 81%;
+      }
+    }
+
+    &-title {
+      font-size: $base-font-size * 3.125;
+      line-height: 1.4;
+      margin-bottom: 0;
+    }
+    .card{
+      background: #fdfdfd;;
+      &.featured{
+        box-shadow: 0px 51.084px 85.914px rgba(189, 189, 189, 0.25);
+      }
+    }
+  }
+}

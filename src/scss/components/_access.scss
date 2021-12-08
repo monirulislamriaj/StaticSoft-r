@@ -1,0 +1,99 @@
+/********** 
+  10. Access Section Styles
+**********/
+.access {
+  padding-bottom: $base-padding * 2.5;
+  background: $color-secondary-dark;
+  position: relative;
+  @include media-breakpoint-down-xl {
+    padding-bottom: $base-padding * 0;
+  }
+  .shape-carve-top {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    @include media-breakpoint-down-xxl {
+      top: -40px;
+    }
+    @include media-breakpoint-down-xl {
+      top: -30px;
+    }
+    @include media-breakpoint-down-lg {
+      top: -20px;
+    }
+    @include media-breakpoint-down-sm {
+      top: -12px;
+    }
+    svg {
+      width: 100%;
+      path {
+        fill: $color-secondary-dark;
+      }
+    }
+  }
+  .shape-carve-bottom {
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    width: 100%;
+    svg {
+      width: 100%;
+    }
+    @include media-breakpoint-down-xxl {
+      bottom: -40px;
+    }
+    @include media-breakpoint-down-xl {
+      bottom: -30px;
+    }
+    @include media-breakpoint-down-lg {
+      bottom: -20px;
+    }
+    @include media-breakpoint-down-sm {
+      bottom: -12px;
+    }
+  }
+  .section-header {
+    padding-top: $base-padding * 5;
+    margin-bottom: $base-margin * 2.5;
+  }
+  .access-wrapper {
+    display: inline-block;
+    text-align: center;
+    .item {
+      text-align: center;
+      display: inline-block;
+      width: 200px;
+      margin-bottom: 3.5rem;
+      @include media-breakpoint-down-xxl {
+        width: 180px;
+      }
+      @include media-breakpoint-down-lg {
+        width: 165px;
+      }
+      .logo {
+        width: 86px;
+        height: 86px;
+        background: #e4fbff;
+        line-height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+        margin: 0 auto $base-margin * 1.5;
+        svg {
+          path {
+            transition: all 0.3s ease-in-out;
+            fill: #383b3f;
+          }
+        }
+      }
+      p {
+        font-size: $base-font-size * 1.2;
+        font-weight: $medium-font-weight;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

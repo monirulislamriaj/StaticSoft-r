@@ -1,0 +1,95 @@
+/********** 
+  11. Testimonial Section Styles 
+**********/
+.testimonial {
+  background-color: $color-primary;
+  position: relative;
+  &-profile {
+    position: relative;
+    z-index: 1;
+    @include media-breakpoint-down-lg {
+      text-align: center;
+      margin-bottom: $base-margin * 3;
+    }
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+    .pattem {
+      position: absolute;
+      top: -11%;
+      left: -15%;
+      z-index: -1;
+      // animation-name: up-down-animation;
+      // animation-duration: 2.5s;
+      // animation-iteration-count: infinite;
+      // animation-direction: alternate;
+      @include media-breakpoint-down-lg {
+        left: 18%;
+      }
+      @include media-breakpoint-down-md {
+        left: 7%;
+      }
+    }
+  }
+  &-content {
+    padding-left: $base-padding * 1.1;
+    padding-right: $base-padding * 2;
+    @include media-breakpoint-down-xxl {
+      padding: 0;
+    }
+    @include media-breakpoint-down-lg {
+      text-align: center;
+    }
+    h2 {
+      font-size: $base-font-size * 1.9;
+      font-family: $font-primary;
+      font-weight: $bold-font-weight;
+      margin-bottom: $base-margin * 5;
+      color: $color-white;
+      @include media-breakpoint-down-xxl {
+        margin-bottom: $base-margin * 3;
+      }
+      @include media-breakpoint-down-xxl {
+        font-size: $base-font-size * 1.5;
+        margin-bottom: $base-margin * 2;
+      }
+    }
+    .info {
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: $base-margin;
+        @include media-breakpoint-down-lg {
+          justify-content: center;
+        }
+        h5 {
+          margin-bottom: 0;
+          color: $color-white;
+          font-size: $base-font-size * 1.1;
+          font-family: $font-primary;
+          font-weight: $medium-font-weight;
+          margin-left: 1.6rem;
+          padding-left: 0.9rem;
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 2px;
+            background: $color-white;
+            top: 50%;
+            left: -7%;
+          }
+        }
+      }
+      h4 {
+        font-size: $base-font-size * 1.5;
+        font-family: $font-primary;
+        font-weight: $semibold-font-weight;
+        color: $color-white;
+      }
+    }
+  }
+}

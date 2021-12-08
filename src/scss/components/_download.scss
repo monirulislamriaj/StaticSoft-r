@@ -1,0 +1,256 @@
+/********** 
+  14. Download Page and Section Styles
+**********/
+.download,
+.download-two {
+  padding-bottom: $base-padding * 13;
+  position: relative;
+
+  @include media-breakpoint-down-xxl {
+    padding-bottom: $base-padding * 7;
+  }
+  @include media-breakpoint-down-lg {
+    padding-bottom: $base-padding * 5;
+  }
+  @include media-breakpoint-down-sm {
+    padding-bottom: $base-padding * 2;
+  }
+
+  .section-header {
+    padding-bottom: $base-padding * 5.2;
+    @include media-breakpoint-down-lg {
+      padding: $base-padding * 3 0;
+    }
+    .shape {
+      @include media-breakpoint-down-sm {
+        top: 94%;
+      }
+    }
+  }
+  .download-items {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    @include media-breakpoint-down-md {
+      display: block;
+      text-align: center;
+    }
+    .card {
+      transition: all 0.4s ease-in-out;
+      padding: $base-padding * 3.1;
+      background: $color-white;
+      border-radius: 10px;
+      box-shadow: none;
+      z-index: 99;
+      text-align: left;
+      transform: translateY(5px);
+      position: relative;
+      @include media-breakpoint-down-lg {
+        text-align: center;
+        margin-bottom: $base-margin * 2;
+      }
+      @include media-breakpoint-down-lg {
+        padding: $base-padding;
+      }
+      @include media-breakpoint-down-md {
+        padding: $base-padding * 2 $base-padding * 2 $base-padding * 3;
+        box-shadow: 0px 51.084px 85.914px rgba(189, 189, 189, 0.25);
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: $base-margin * 1.6;
+        transition: all 0.4s ease-in-out;
+        span {
+          color: $color-black;
+          font-size: $base-font-size * 2.8;
+          font-family: $font-secondary;
+          font-weight: 900;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+      .card-title {
+        display: flex;
+        align-items: center;
+        font-size: $base-font-size * 1.7;
+        color: $color-primary;
+        margin-bottom: $base-margin * 1.2;
+        @include media-breakpoint-down-xxl {
+          font-size: $base-font-size * 1.3;
+        }
+        @include media-breakpoint-down-lg {
+          justify-content: start;
+          text-align: left;
+        }
+        @include media-breakpoint-down-sm {
+          font-size: $base-font-size * 1;
+        }
+        span {
+          margin-right: 0.8rem;
+        }
+      }
+      .card-text {
+        font-size: $base-font-size * 1.25;
+        line-height: $base-font-size * 1.8;
+        margin-bottom: $base-margin * 3.8;
+      }
+      .shape {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: 100;
+        transition: all 0.4s ease-in-out;
+        @include media-breakpoint-down-lg{
+          display:none;
+        }
+      }
+      &:hover {
+        background: #fdfdfd;
+        transform: translateY(-5px);
+        box-shadow: 0px 51.084px 85.914px rgba(189, 189, 189, 0.25);
+        transition: all 0.4s ease-in-out;
+        .shape{
+          position: absolute;
+          right: 15px;
+        }
+      }
+      &-body {
+        padding: 0;
+        form {
+          display: flex;
+          align-items: center;
+          @include media-breakpoint-down-xl {
+            display: block;
+          }
+          .from-group {
+            .input-group {
+              @include media-breakpoint-down-xl {
+                display: block;
+              }
+              .form-control {
+                padding: 0.65rem 1.9rem;
+                border-radius: 50px;
+                border: 1px solid #f0f0f0;
+                color: $color-black;
+                @include media-breakpoint-down-xl {
+                  width: 100%;
+                  margin: 0 auto 1rem;
+                }
+                &::placeholder {
+                  color:#ababab;
+                  font-size: 14px;
+                  font-weight: $bold-font-weight;
+                }
+                &:focus {
+                  border-color: $color-primary;
+                }
+              }
+              .btn-secondary{
+                padding: 0.75rem 1.9rem !important;
+                @include media-breakpoint-only-xl {
+                  padding: 0.75rem 1rem !important;
+                }
+                @include media-breakpoint-only-lg {
+                  padding: 0.75rem .5rem !important;
+                }
+              }
+            }
+            .submit {
+              margin-left: 0.7rem !important;
+              @include media-breakpoint-down-sm {
+                margin-left: 0rem !important;
+              }
+              .btn{
+                margin-bottom: 0 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-hero {
+    position: relative;
+    padding-bottom: $base-padding * 16;
+    @include media-breakpoint-down-lg{
+      padding-bottom: $base-padding * 10;
+    }
+    @include media-breakpoint-down-md{
+      padding-bottom: $base-padding * 8;
+    }
+    &-dashboard {
+      text-align: center;
+      position: relative;
+      @include media-breakpoint-down-lg{
+        border-radius: 50px;
+        box-shadow: 0px 40px 60px rgba(189, 189, 189, 0.35);
+      }
+      .dashboard-shape-one,
+      .dashboard-shape-two {
+        position: absolute;
+        top: 17%;
+        right: 5%;
+        border-radius: 50px;
+        box-shadow: 0px 40px 60px rgba(189, 189, 189, 0.35);
+      }
+      .dashboard-shape-one{
+        @include media-breakpoint-down-lg{
+          display: none;
+        }
+      }
+      .dashboard-shape-two {
+        left: 60%;
+        top: 10%;
+        border-radius: 10.1404px;
+        
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  // start-dawnload-two
+
+  &-two {
+    background: $color-gray;
+    position: relative;
+    padding-bottom: $base-padding * 9;
+    margin-bottom: $base-margin * 10;
+    @include media-breakpoint-down-lg {
+      padding-bottom: $base-padding * 4;
+      margin-bottom: $base-margin * 4;
+    }
+    .btn{
+      @include media-breakpoint-down-xl{
+        width: 100%;
+        margin-bottom: $base-margin !important;
+      }
+    }
+  }
+  .shape-carve-top {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    width: 100%;
+    @include media-breakpoint-down-lg {
+      top: -40px;
+    }
+    @include media-breakpoint-down-md {
+      top: -18px;
+    }
+    svg {
+      width: 100%;
+      path {
+        fill: $color-gray;
+      }
+    }
+  }
+  .btn{
+    @include media-breakpoint-down-xl{
+      width: 100%;
+      margin-bottom: $base-margin !important;
+    }
+  }
+}

@@ -1,0 +1,343 @@
+
+/********** 
+ 1. Default  Styles 
+**********/
+@use "sass:math";
+/*Font */
+ body {
+  font-family: $font-primary;
+  font-size: $base-font-size;
+  color: $color-text;
+  background: $color-white;
+  line-height: 1.5;
+}
+.bg-nav{
+  background: rgba($color-secondary, .95);
+  &.sticky-nav{
+    background: rgba($color-secondary, .95);
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-header;
+  font-family: $font-secondary;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.05px;
+}
+
+
+h1 {
+  font-size: $base-font-size * 4.5;
+}
+
+h2 {
+  font-size: $base-font-size * 2.6;
+}
+
+h3 {
+  font-size: $base-font-size * 2;
+}
+
+h4 {
+  font-size: $base-font-size * 1.5;
+}
+
+h5 {
+  font-size: $base-font-size * 1.25;
+}
+
+h6 {
+  font-size: $base-font-size * 1;
+}
+p {
+  font-size: $base-font-size;
+  color: $color-text;
+  font-weight: $regular-font-weight;
+  line-height: 2;
+  margin-top: 0;
+  margin-bottom: $base-margin;
+}
+a {
+  color: $color-text;
+  text-decoration: none;
+  display: inline-block;
+  transition: $base-transition;
+  a:hover {
+    color: $color-text;
+  }
+}
+// Learn-more links
+.Learn-more {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-primary;
+    font-size: $base-font-size * 1.25;
+    font-weight: $medium-font-weight;
+    transition: $base-transition;
+    transform: translateY(5px);
+    i {
+      margin-left: $base-margin * 0.75;
+      transition: all 0.5s ease-in-out;
+    }
+    &:hover {
+      color: $color-primary-dark;
+      // transform: translateY(-5px);
+    }
+  }
+}
+/********** 
+  15. Custom Styles 
+**********/
+
+/* Privacy Page */
+
+.privacy{
+  &-body{
+    position: relative;
+  }
+}
+
+// section-header style
+.section-header {
+  padding: $base-padding * 4 0 $base-padding * 3;
+  text-align: center;
+  position: relative;
+
+  h2 {
+    position: relative;
+    margin-bottom: 12px;
+
+    @include media-breakpoint-down-sm {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-down-md {
+      font-size: $base-font-size * 2.5;
+      line-height: 1.4;
+    }
+
+  }
+  .shape {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include media-breakpoint-down-sm {
+      top: 94%;
+    }
+  }
+}
+
+// 404 page style
+.error {
+  position: relative;
+  background: linear-gradient(239.24deg, #f4f7fe 22.34%, #fbfcff 83.1%);
+  &-content {
+    position: relative;
+    h3 {
+      color: $color-header;
+      font-weight: $bold-font-weight;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+
+/*divider Style */
+.divider {
+  border-bottom: 1px solid $color-primary-light;
+}
+/* Cards */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.5rem;
+  border:none;
+}
+/* Accordions */
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  font-size: $base-font-size * 1.9;
+  color: $color-black;
+  font-family: $font-secondary;
+  text-align: left;
+  background: $color-gray;
+  border: 0;
+  font-weight: 900;
+  border-radius: 0;
+  overflow-anchor: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion-button {
+    transition: none;
+  }
+}
+.accordion-button:not(.collapsed) {
+  padding: 0rem 0rem 0 0rem;
+  color: #000;
+  background: #fcfcfc;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url('data:image/svg+xml,%3csvg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="20" cy="20" r="20" fill="%23EBEBEB"/%3e%3cpath d="M13.125 20H26.875" stroke="%23383B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3e%3c/svg%3e');
+  transform: rotate(180deg);
+}
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: url('data:image/svg+xml,%3csvg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3ccircle cx="20" cy="20" r="20" fill="%23EBEBEB"/%3e%3cpath d="M13.125 20H26.875" stroke="%23383B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3e%3cpath d="M20 13.125V26.875" stroke="%23383B3F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/%3e%3c/svg%3e');
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion-button::after {
+    transition: none;
+  }
+}
+.accordion-button:hover {
+  z-index: 2;
+}
+.accordion-button:focus {
+  z-index: 3;
+  border-color: rgba(250, 250, 250, 0.52);
+  outline: 0;
+  box-shadow: none;
+}
+
+.accordion-header {
+  margin-bottom: 0;
+}
+
+.accordion-item {
+  background: $color-gray;
+  border: none;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ebebeb;
+  padding: 1.9rem 0;
+}
+.accordion-item:first-of-type {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: calc(0.5rem - 1px);
+  border-top-right-radius: calc(0.5rem - 1px);
+}
+.accordion-item:last-of-type {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-right-radius: calc(0.5rem - 1px);
+  border-bottom-left-radius: calc(0.5rem - 1px);
+}
+.accordion-item:last-of-type .accordion-collapse {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.accordion-body {
+  padding: 1rem 30rem 0rem 0rem;
+}
+
+.accordion-flush .accordion-collapse {
+  border-width: 0;
+}
+.accordion-flush .accordion-item {
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+.accordion-flush .accordion-item:first-child {
+  border-top: 0;
+}
+.accordion-flush .accordion-item:last-child {
+  border-bottom: 0;
+}
+.accordion-flush .accordion-item .accordion-button {
+  border-radius: 0;
+}
+/* Keyframes for hero pages */
+@keyframes grow {
+  0% {
+    transform: scale(0.9) translate(-50%, -50%);
+  }
+
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+@keyframes up-down-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes up-down-rev-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+@keyframes left-right-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes right-left-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
